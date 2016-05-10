@@ -1,0 +1,280 @@
+@media screen and (min-width: 1280px)
+{	body,html{ 
+	    background:url('../image/background2.jpg') fixed;
+	    background-size: 100%;
+	    background-repeat:no-repeat;
+	    color: #795548;
+	}
+
+
+
+	h1
+	{
+		
+		font-family: Georgia;
+		font-size: 300%;
+		margin-left: 2.0%;
+		color : #000;
+	}
+
+	h2
+	{
+		
+		font-family: Georgia;
+		font-size: 250% ;
+		margin-left: 2.0%;
+		color : #000;
+	}
+
+	p
+	{
+
+		font-family: Georgia;
+		font-size: 140% ;
+		margin-left: 0.7%;
+		color : #000;
+	}
+
+	#divinfos1{
+		position:relative; 
+		margin:auto; 
+		width:30%; 
+		height:200%; 
+		z-index:2; 
+	}
+
+	#divmangas1{
+		position:relative; 
+		margin:auto; 
+		width:50%; 
+		height:100%; 
+		z-index:2; 
+	}
+
+	#divmangas1 p {
+		font-family: Georgia;
+		font-size: 100% ;
+		margin-left: 0.7%;
+		color : #000;
+	}
+
+	#divquestion{
+	   	position:relative; 
+		margin:auto;
+		z-index:2;
+   	}
+
+	#icone{
+
+		width: 50%;
+
+	}
+
+	#navbar
+	{
+		width: 100%;
+
+	}
+
+	
+	
+}
+
+
+
+@media screen and (min-width: 500px) and (max-width: 1280px){
+	body,html { 
+    		background-color: #cfd8dc;
+    		background: url('../image/background.jpg') fixed repeat;
+    		background-size: 100%;
+   
+		}
+
+	h1
+	{
+	
+		font-family: Georgia;
+		font-size: 200%;
+		margin-left: 0.7%;
+		color : #000;
+	}
+
+	h2
+	{
+	
+		font-family: Georgia;
+		font-size: 185% ;
+		margin-left: 0.7%;
+		color : #000;
+	}
+
+	#icone{
+		width: 30%;
+
+	}
+
+	#navbar
+	{
+		width: 100%;
+
+	}
+
+	#mobile-demo
+	{
+		width: 50%;
+	}
+
+	#divquestion{
+	   	position:relative; 
+		margin:auto;
+		z-index:2;
+   	}
+
+	p
+	{
+
+		font-family: Georgia;
+		font-size: 90% ;
+		margin-left: 0.7%;
+		color : #000;
+	}
+	#divinfos1{
+		position:relative; 
+		margin:auto; 
+		width:30%; 
+		height:200%; 
+		z-index:2; 
+	}
+
+	#divmangas1{
+		width:70%; 
+		height:200%; 
+		position:relative; 
+		margin:auto; 
+		z-index:2;
+	}
+
+	#divmangas1 p {
+		font-family: Georgia;
+		font-size: 100% ;
+		margin-left: 0.7%;
+		color : #000;
+	}
+
+}
+
+@media screen and (max-width: 500px){
+	body,html { 
+    		background-color: #cfd8dc;
+    		background: url('../image/background.jpg') fixed repeat;
+    		background-size: 100%;
+   
+		}
+
+	h1
+	{
+	
+		font-family: Georgia;
+		font-size: 200%;
+		margin-left: 0.7%;
+		color : #000;
+	}
+
+	h2
+	{
+	
+		font-family: Georgia;
+		font-size: 185% ;
+		margin-left: 0.7%;
+		color : #000;
+	}
+
+	p
+	{
+
+		font-family: Georgia;
+		font-size: 90% ;
+		margin-left: 0.7%;
+		color : #000;
+	}
+
+	#icone{
+		width: 30%;
+
+	}
+
+	#navbar
+	{
+		width: 100%;
+
+	}
+
+	#mobile-demo
+	{
+		width: 50%;
+	}
+
+	#divinfos1{
+		position:relative; 
+		margin:auto; 
+		width:50%; 
+		height:200%; 
+		z-index:2; 
+	}
+
+	#divmangas1{
+		width:70%; 
+		height:200%;
+		position:relative; 
+		margin:auto; 
+		z-index:2; 
+
+	}
+
+	#divmangas1 p {
+		font-family: Georgia;
+		font-size: 100% ;
+		margin-left: 0.7%;
+		color : #000;
+	}
+
+	#divquestion{
+	   	position:relative; 
+		margin:auto;
+		z-index:2;
+   	}
+
+}
+
+
+
+
+/* label color */
+   .input-field label {
+     color: #000;
+     font-size: 145%;
+     font-family: Georgia;
+   }
+   /* label focus color */
+   .input-field input[type=text]:focus + label {
+     color: #000;
+   }
+   /* label underline focus color */
+   .input-field input[type=text]:focus {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* valid color */
+   .input-field input[type=text].valid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* invalid color */
+   .input-field input[type=text].invalid {
+     border-bottom: 1px solid #000;
+     box-shadow: 0 1px 0 0 #000;
+   }
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+     color: #000;
+   }
