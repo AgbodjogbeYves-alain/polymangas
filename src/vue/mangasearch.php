@@ -15,7 +15,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     </head>
 <body>
-      <div class="navbar-wrapper">
+      <div class="navbar-fixed">
       <nav>
           <div class="nav-wrapper grey darken-2">
           <ul class="hide-on-med-and-down">
@@ -28,8 +28,7 @@
              <li><a href="gerefavoris.php">Favoris</a></li>
               <li><a href="../controller/logout.php">Logout</a></li>
           </ul>
-          <!--Content-->
-          <?php include("../controller/gerefavoris.php"); ?>
+
           <!--Side nav-->
           <ul class="side-nav" id="mobile-demo">
               <li><a href="info.php">Infos personnels</a></li>
@@ -40,6 +39,15 @@
         </div>
       </nav>
       </div>
+      <!--content-->
+       <!--content-->
+      <div class="recherche_p">
+        <form action="mangasearch.php" id="searchthis" method="POST">
+        <input id="search" name="searchmanga" type="text" placeholder="Rechercher" />
+        <input id="search-btn" type="submit" value="Rechercher" name="action" />
+        </form>
+      </div>
+      <?php include("../controller/mangasearch.php"); ?>
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="../js/materialize.min.js"></script>

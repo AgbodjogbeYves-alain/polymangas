@@ -5,7 +5,8 @@
 <?php
 	
 	if (isset($_COOKIE['user'])){
-		$mangas = get_all_mangas();
+		$titre1 = $_POST['searchmanga']);
+		$mangas = get_these_mangas($titre1);
 		$pseudo=$_COOKIE['user'];
 		$favoris= get_users_fav($pseudo);
 		foreach ($mangas as $manga) {
@@ -96,5 +97,10 @@
 	elseif(!isset($_COOKIE['user'])) 
 	{
 		header("Location: http://polymangas-igmangas.rhcloud.com/src/vue/signin.php");
+		exit();
 	}
+	/*$titre1 = $_POST['searchmanga'];
+	$mangas = get_these_mangas($titre1);
+	echo $titre1;
+	print_r($mangas);*/
 ?>

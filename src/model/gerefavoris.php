@@ -17,7 +17,12 @@
 	}
 
 
-
+	function delete_fav($id_manga,$pseudo){
+		global $bdd;
+		$req2 = $bdd->prepare('DELETE FROM FAVORIS WHERE ID_MANGA= ? AND PSEUDO= ?');
+		$req2->execute(array ($id_manga,$pseudo));
+		return 0;
+	}
 
 
 ?>

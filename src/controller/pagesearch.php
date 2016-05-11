@@ -5,7 +5,8 @@
 <?php
 	
 	if (isset($_COOKIE['user'])){
-		$mangas = get_all_mangas();
+		$titre1 = mysql_real_escape_string($_POST['search']);
+		$mangas = get_these_mangas($titre1);
 		$pseudo=$_COOKIE['user'];
 		$favoris= get_users_fav($pseudo);
 		foreach ($mangas as $manga) {
@@ -14,6 +15,7 @@
 			$dessinateur = utf8_encode($manga['DESSINATEUR']);
 			$editeur = utf8_encode($manga['EDITEUR']);
 			$present=0;
+			print('<p> Votre recherche pour '.$_POST['search'].' a donné </p>');
 			foreach($favoris as $i){
 				if($manga['ID_MANGA']==$i['ID_MANGA']){
 					$present=1;
@@ -95,6 +97,9 @@
 
 	elseif(!isset($_COOKIE['user'])) 
 	{
-		header("Location: http://polymangas-igmangas.rhcloud.com/src/vue/signin.php");
+		print('<META HTTP-EQUIV="Refresh" CONTENT="0;URL=../signin.php>');
 	}
+	//$mangas = get_these_mangas($titre1);
+	//echo $titre1 = $_POST['search'];
+	//echo $mangas;
 ?>

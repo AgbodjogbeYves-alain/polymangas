@@ -15,4 +15,38 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     </head>
 <body>
-      <h1> $_POST[$titre]
+<div class="navbar-fixed">
+      <nav>
+          <div class="nav-wrapper grey darken-2">
+          <ul class="hide-on-med-and-down">
+            <a href="acceuilabo.php" class="brand-logo" id = "icone">PolyMangas</a>
+          </ul>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+              <li><a href="info.php">Infos personnels</a></li>
+              <li><a href="affichemangas.php">Mangas</a></li>
+              <li><a href="gerefavoris.php">Favoris</a></li>
+              <li><a href="../controller/logout.php">Logout</a></li>
+          </ul>
+
+          <!--Side nav-->
+          <ul class="side-nav" id="mobile-demo">
+              <li><a href="info.php">Infos personnels</a></li>
+              <li><a href="affichemangas.php">Mangas</a></li>
+              <li><a href="gerefavoris.php">Favoris</a></li>
+              <li><a href="../controller/logout.php">Logout</a></li>
+          </ul>
+        </div>
+      </nav>
+      </div>
+      <?php include("../controller/volumes.php"); ?>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="../js/materialize.min.js"></script>
+      <script type="text/javascript">
+        $(function(){
+          $(".button-collapse").sideNav();
+        });
+      </script>
+    </body>
+</html>

@@ -10,7 +10,7 @@
 
 		print (
 			'<div class="panel panel-default grey lighten-2" id="divinfos1" >
-	        <div class="panel-heading"><p> Vous etes:'.$donnees['NOM']."".$donnees['PRENOM'].'</p></div>
+	        <div class="panel-heading"><p> Vous etes:'.$donnees['NOM']." ".$donnees['PRENOM'].'</p></div>
 	        <div class="panel-body">
 	        <p> Votre pseudo : '.$donnees['PSEUDO'].'</p>
 	        <p> Votre mot de passe : '.$donnees['PASSWORD'].'</p>
