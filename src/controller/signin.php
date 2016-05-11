@@ -6,7 +6,9 @@
         $pseudo = $_POST['pseudo'];
         $password = $_POST['password'];
         //On vérifie que le login existe dans la table
-
+        $reponse_admin = $bdd->prepare('SELECT ISADMIN FROM USERS WHERE PSEUDO = ?');
+        $reponse_admin->execute(array($pseudo));
+        $droit =  $reponse_admin->fetch();
         if(!isset($_COOKIE["user"]))
         {
             if(isset($_POST['pseudo']) && isset($_POST['password'])){
@@ -32,9 +34,8 @@
                     //Si le mot de passe est hashé dans la bdd, il faut appliquer ce hashage à $password dans la vérification ci-dessous
                     if ($donnees == true)
                     {
-                        $reponse_admin = $bdd->prepare('SELECT ISADMIN FROM USERS WHERE PSEUDO = ?');
-                        $reponse_admin->execute(array($pseudo));
-                        if ($reponse_admin == 1){
+                        
+                        if ($droit['ISADMIN'] == 1){
                             echo "c'est un abonne";
                             header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/acceuilabo.php');
                         }
@@ -43,23 +44,24 @@
                              header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/acceuiladmin.php');
                             }
 
-                        setcookie("user",$pseudo,mktime()+(60*3),"/");
+                        setcookie("user",$pseudo,mktime()+(100000),"/");
                     }
                     else{
                         header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/signin.php');
                     }
                 }
            }
-            elseif(isset($_COOKIE["user"])){
-                $reponse_admin = $bdd->prepare('SELECT ISADMIN FROM USERS WHERE PSEUDO = ?');
-                $reponse_admin->execute(array($_COOKIE['user']));
-                if ($reponse_admin == 0){
-                    header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/acceuiladmin.php');
+       }
+            elseif(isset($_COOKIE["user"]))
+            {
+                if ($droit['ISADMIN'] == 1){
+                    header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/acceuilabo.php');
+                    exit();
                 }
                 else{
-                    header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/acceuilabo.php');
+                    header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/acceuiladmin.php');
+                    exit();
                 }
             }
-        }
 
 ?>
