@@ -5,7 +5,7 @@
 <?php
 	
 	if (isset($_COOKIE['user'])){
-		$titre1 = $_POST['searchmanga']);
+		$titre1 = htmlentities($_POST['searchmanga'],ENT_QUOTES);
 		$mangas = get_these_mangas($titre1);
 		$pseudo=$_COOKIE['user'];
 		$favoris= get_users_fav($pseudo);
@@ -22,7 +22,7 @@
 			}
 			if($present==1){
 				print (
-					'<div class="panel panel-default grey lighten-2" id="divmangas1" >
+					'<div class="panel panel-default grey lighten-2" id="divmangas1">
 			        <div class="panel-heading"><p> TITRE : '.$titre.'</p></div>
 			        <div class="panel-body">
 			        <p> EDITEUR : '.$editeur.'</p>
@@ -30,25 +30,32 @@
 			        <p> SYNOPSIS : '.$description.'</p>
 			        <p><form method = "POST" class="col s9" action="../controller/deletefavoris.php"> 
 				        <div>
-				        <div class="row">
-		          			<div class="input-field col s9">
-		              			<input id="idmanga" type="number" name="idmanga" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
-		              			<label class="active" for="ID">ID</label>
-		            		</div>
-		          		</div>
-		          		<div>
-			            	<button>
-			             		<a class="waves-effect waves-light btn" type="submit" name="action">Retirer des favoris</a>
-			             		<i class="material-icons right">done</i>
-			            	</button>
-			            </div>
+					        <div class="row">
+			          			<div class="input-field col s9">
+			              			<input id="idmanga" type="number" name="idmanga" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
+			              			<label class="active" for="ID">ID</label>
+			            		</div>
+			          		</div>
+			          		<div>
+				            	<button>
+				             		<a class="waves-effect waves-light btn" type="submit" name="action">
+				             		<i class="material-icons right">done</i>Retirer des favoris</a>
+				            	</button>
+				            </div>
 		          		</div>
 			         </form></p>
-			         <p><form method = "POST" class="col s9" action="../vue/volume_mangas.php">
+			         <p><form method = "POST" class="col s9" action="../vue/volume_manga.php">
+				         <div>
+					        <div class="row">
+			          			<div class="input-field col s9">
+			              			<input id="idmanga" type="HIDDEN" name="idmanga1" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
+			            		</div>
+			          		</div>
+		          		</div>
 			          <div>
 			            <button> 
-			              <a class="waves-effect waves-light btn" type="submit" name="action">Verifier les tomes disponibles</a>
-			              <i class="material-icons right">done</i>
+			              <a class="waves-effect waves-light btn" type="submit" name="action">
+			              <i class="material-icons right">done</i>Verifier les tomes disponibles</a>
 			            </button>
 			          </div>
 			         </form></p>
@@ -71,19 +78,26 @@
 	              			<label class="active" for="ID">ID</label>
 	            		</div>
 	          		</div>
-	          		</div>
 		        	<div>
 		            <button>
-		             <a class="waves-effect waves-light btn" type="submit" name="action">Ajouter aux favoris</a>
-		             <i class="material-icons right">done</i>
+		             <a class="waves-effect waves-light btn" type="submit" name="action">
+		             <i class="material-icons right">done</i>Ajouter aux favoris</a>
 		            </button>
 		          </div>
+		          </div>
 		         </form></p>
-		         <p><form method = "POST" class="col s9" action="../vue/volume_mangas.php">
+		         <p><form method = "POST" class="col s9" action="../vue/volume_manga.php">
+		         <div>
+				        <div class="row">
+		          			<div class="input-field col s9">
+		              			<input id="idmanga" type="HIDDEN" name="idmanga1" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
+		            		</div>
+		          		</div>
+		          </div>
 		          <div>
 		            <button> 
-		              <a class="waves-effect waves-light btn" type="submit" name="action">Verifier les tomes disponibles</a>
-		              <i class="material-icons right">done</i>
+		              <a class="waves-effect waves-light btn" type="submit" name="action">
+		              <i class="material-icons right">done</i>Verifier les tomes disponibles</a>
 		            </button>
 		          </div>
 		         </form></p>
@@ -97,10 +111,9 @@
 	elseif(!isset($_COOKIE['user'])) 
 	{
 		header("Location: http://polymangas-igmangas.rhcloud.com/src/vue/signin.php");
-		exit();
 	}
-	/*$titre1 = $_POST['searchmanga'];
-	$mangas = get_these_mangas($titre1);
-	echo $titre1;
-	print_r($mangas);*/
+	//$titre1 = $_POST['searchmanga'];
+	//$mangas = get_these_mangas($titre1);
+	//echo $titre1;
+	//print_r($mangas);
 ?>

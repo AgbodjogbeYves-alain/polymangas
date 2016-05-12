@@ -3,8 +3,8 @@
 
 	function get_users_fav($pseudo){
 		global $bdd;
-		$req1 = $bdd->prepare("SELECT ID_MANGA FROM FAVORIS WHERE PSEUDO= ?");
-		$req1->execute(array($pseudo));
+		$req1 = $bdd->prepare('SELECT ID_MANGA FROM FAVORIS WHERE PSEUDO="'.$pseudo.'"');
+		$req1->execute();
 		$favoris = $req1 -> fetchAll();
 		return $favoris;
 	}

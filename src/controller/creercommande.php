@@ -1,11 +1,12 @@
 <?php
 	include("../bdd/config.php");
-	include("../model/gerefavoris.php");
+	include("../model/monpanier.php");
 
-	$id_manga=$_POST['idmanga'];
+	$id_volume=$_POST['idvolume'];
 	if (isset($_COOKIE['user'])){
+		$date = date("d-m-Y");
 		$pseudo=$_COOKIE['user'];
-		delete_fav($id_manga,$pseudo);
+		create_com($id_volume,$pseudo,$date);
 		header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/affichemangas.php');
 	}
 	elseif(!isset($_COOKIE['user'])){

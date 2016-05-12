@@ -23,8 +23,8 @@
 	        <p><form method = "POST" class="col s9" action="../vue/modifinfos.php">
 	          <div>
 	            <button>
-	              <a class="waves-effect waves-light btn" type="submit" name="action">Modifier</a>
-	              <i class="material-icons right">done</i>
+	              <a class="waves-effect waves-light btn" type="submit" name="action">
+	              <i class="material-icons right">done</i>Modifier</a>
 	            </button>
 	          </div>
 	         </form></p>

@@ -7,4 +7,12 @@
 		return $volumes;
 	}
 
+	function get_this_volumes($id_volume){
+		global $bdd;
+		$req = $bdd->prepare('SELECT * FROM VOLUME_MANGA WHERE ID_VOLUME="'.$id_volume.'"');
+		$req->execute();
+		$volumes = $req -> fetchAll();
+		return $volume;
+	}
+
 ?>

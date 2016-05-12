@@ -15,7 +15,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     </head>
 <body>
-      <div class="navbar-wrapper">
+      <div class="navbar-fixed">
       <nav>
           <div class="nav-wrapper grey darken-2">
           <ul class="hide-on-med-and-down">

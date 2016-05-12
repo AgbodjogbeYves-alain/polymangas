@@ -37,8 +37,8 @@
 		          		</div>
 		          		<div>
 			            	<button>
-			             		<a class="waves-effect waves-light btn" type="submit" name="action">Retirer des favoris</a>
-			             		<i class="material-icons right">done</i>
+			             		<a class="waves-effect waves-light btn" type="submit" name="action">
+			             		<i class="material-icons right">cloud</i>Retirer des favoris</a>
 			            	</button>
 			            </div>
 		          		</div>
@@ -53,8 +53,8 @@
 	          		</div>
 			          <div>
 			            <button> 
-			              <a class="waves-effect waves-light btn" type="submit" name="action">Verifier les tomes disponibles</a>
-			              <i class="material-icons right">done</i>
+			              <a class="waves-effect waves-light btn" type="submit" name="action">
+			              <i class="material-icons right">cloud</i>Verifier les tomes disponibles</a>
 			            </button>
 			          </div>
 			         </form></p>
@@ -80,8 +80,8 @@
 	          		</div>
 		        	<div>
 		            <button>
-		             <a class="waves-effect waves-light btn" type="submit" name="action">Ajouter aux favoris</a>
-		             <i class="material-icons right">done</i>
+		             <a class="waves-effect waves-light btn" type="submit" name="action">
+		             <i class="material-icons right">done</i>Ajouter aux favoris</a>
 		            </button>
 		          </div>
 		         </form></p>
@@ -95,8 +95,8 @@
 	          		</div>
 		          <div>
 		            <button> 
-		              <a class="waves-effect waves-light btn" type="submit" name="action">Verifier les tomes disponibles</a>
-		              <i class="material-icons right">done</i>
+		              <a class="waves-effect waves-light btn" type="submit" name="action">
+		              <i class="material-icons right">done</i>Verifier les tomes disponibles</a>
 		            </button>
 		          </div>
 		         </form></p>

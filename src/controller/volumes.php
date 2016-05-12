@@ -21,7 +21,7 @@
 			        <p> LIBELLE : '.$numero.'</p>
 			        <p> RESUME : '.$description.'</p>
 			        <p> Nombre de livre restant pour ce tome : '.$disponibilite.'</p>
-			        <p><form method = "POST" class="col s9" action="../controller/ajouteraupanier.php"> 
+			        <p><form method = "POST" class="col s9" action="../controller/creercommande.php"> 
 				        <div>
 				        <div class="row">
 		          			<div class="input-field col s9">
