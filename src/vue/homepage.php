@@ -1,4 +1,4 @@
-
+<?php include("../controller/controlecookie.php");?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,7 +39,7 @@
   		</div>
 	<!--Content-->
 	<h1>Bienvenue sur Polymangas</h1>
-    <h2>Site de mangas et de produits dérivés</h2>
+    <h2>Site de mangas</h2>
 	
 
 	<!--Import jQuery before materialize.js-->

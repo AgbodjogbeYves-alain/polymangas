@@ -43,7 +43,14 @@
 			            </div>
 		          		</div>
 			         </form></p>
-			         <p><form method = "POST" class="col s9" action="../vue/volume_mangas.php">
+			         <p><form method = "POST" class="col s9" action="../vue/volume_manga.php">
+			          <div>
+				        <div class="row">
+		          			<div class="input-field col s9">
+		              			<input id="idmanga" type="HIDDEN" name="idmanga1" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
+		            		</div>
+		          		</div>
+	          		</div>
 			          <div>
 			            <button> 
 			              <a class="waves-effect waves-light btn" type="submit" name="action">Verifier les tomes disponibles</a>
@@ -78,7 +85,14 @@
 		            </button>
 		          </div>
 		         </form></p>
-		         <p><form method = "POST" class="col s9" action="../vue/volume_mangas.php">
+		         <p><form method = "POST" class="col s9" action="../controller/volumes.php">
+		          <div>
+			        <div class="row">
+	          			<div class="input-field col s9">
+	              			<input id="idmanga" type="HIDDEN" name="idmanga1" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
+	            		</div>
+	          		</div>
+	          		</div>
 		          <div>
 		            <button> 
 		              <a class="waves-effect waves-light btn" type="submit" name="action">Verifier les tomes disponibles</a>

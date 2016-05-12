@@ -16,3 +16,14 @@
 		$req -> execute(array($password,$email,$numrue,$libellerue ,$ville,$pays,$pseudo));
 		return 0;
 	}
+
+	function get_droit_user(){
+		global $bdd;
+		$pseudo = $_COOKIE['user'];
+		$req = $bdd->prepare('SELECT ISADMIN FROM USERS WHERE PSEUDO = ?');
+		$req->execute(array ($pseudo));
+		$droit = $req -> fetch();
+		return $droit;
+	}
+
+?>

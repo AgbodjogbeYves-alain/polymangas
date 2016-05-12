@@ -1,3 +1,5 @@
+<?php include("../controller/controlecookie.php");?>
+
 <!DOCTYPE html>
 
 

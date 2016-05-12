@@ -6,7 +6,7 @@
 			$nom =htmlentities($_POST['last_name'],ENT_QUOTES);
 		    $prenom =htmlentities($_POST['first_name'],ENT_QUOTES);
 		    $pseudo = htmlentities($_POST['pseudo'],ENT_QUOTES);
-			$password = htmlentities($_POST['password'],ENT_QUOTES);
+			$password = sha1(htmlentities($_POST['password'],ENT_QUOTES));
 			$ville = htmlentities($_POST['ville'],ENT_QUOTES);
 			$numrue =$_POST['numrue'];
 			$libellerue =htmlentities($_POST['libellerue'],ENT_QUOTES);

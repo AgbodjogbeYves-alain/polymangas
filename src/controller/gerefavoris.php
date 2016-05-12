@@ -25,7 +25,7 @@
 				        <div>
 				        <div class="row">
 		          			<div class="input-field col s9">
-		              			<input id="idmanga" type="number" name="idmanga" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
+		              			<input id="idmanga" type="number" name="idmanga" value="'.$idmanga.'" readonly="readonly"/>
 		              			<label class="active" for="ID">ID</label>
 		            		</div>
 		          		</div>
@@ -37,7 +37,7 @@
 			            </div>
 		          		</div>
 			         </form></p>
-			         <p><form method = "POST" class="col s9" action="../vue/volume_mangas.php">
+			         <p><form method = "POST" class="col s9" action="../vue/volume_manga.php">
 			          <div>
 			            <button> 
 			              <a class="waves-effect waves-light btn" type="submit" name="action">Verifier les tomes disponibles</a>

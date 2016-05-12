@@ -9,9 +9,7 @@
         $reponse_admin = $bdd->prepare('SELECT ISADMIN FROM USERS WHERE PSEUDO = ?');
         $reponse_admin->execute(array($pseudo));
         $droit =  $reponse_admin->fetch();
-        if(!isset($_COOKIE["user"]))
-        {
-            if(isset($_POST['pseudo']) && isset($_POST['password'])){
+        if(isset($_POST['pseudo']) && isset($_POST['password'])){
 
                 $verif_pseudo = $bdd->prepare("SELECT COUNT(*) FROM USERS WHERE PSEUDO = ? ");
                 $verif_pseudo->execute(array($pseudo));
@@ -44,24 +42,12 @@
                              header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/acceuiladmin.php');
                             }
 
-                        setcookie("user",$pseudo,mktime()+(100000),"/");
+                        setcookie("user",$pseudo,time()+86400,"/");//dure 1 jour
                     }
                     else{
                         header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/signin.php');
                     }
                 }
            }
-       }
-            elseif(isset($_COOKIE["user"]))
-            {
-                if ($droit['ISADMIN'] == 1){
-                    header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/acceuilabo.php');
-                    exit();
-                }
-                else{
-                    header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/acceuiladmin.php');
-                    exit();
-                }
-            }
-
+           
 ?>
