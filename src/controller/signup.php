@@ -21,4 +21,8 @@
 				header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/signup.php');
 			}
 		}
+		else
+		{
+			header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/signup.php');
+		}
 ?>

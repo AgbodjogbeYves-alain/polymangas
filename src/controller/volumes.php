@@ -32,8 +32,8 @@
 		          		</div>
 		          		<div>
 			            	<button>
-			             		<a class="waves-effect waves-light btn" type="submit" name="action">Ajouter au panier</a>
-			             		<i class="material-icons right">done</i>
+			             		<a class="waves-effect waves-light btn" type="submit" name="action">
+			             		<i class="material-icons right">done</i>Ajouter au panier</a>
 			            	</button>
 			            </div>
 			            </form></p>

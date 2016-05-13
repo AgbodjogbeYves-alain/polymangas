@@ -3,15 +3,15 @@
 		global $bdd;
 		$req = $bdd->prepare('SELECT * FROM VOLUME_MANGA WHERE ID_MANGA="'.$id_mangas.'"');
 		$req->execute();
-		$volumes = $req -> fetchAll();
+		$volumes = $req -> fetchAll(PDO::FETCH_ASSOC);
 		return $volumes;
 	}
 
-	function get_this_volumes($id_volume){
+	function get_this_volume($id_volume){
 		global $bdd;
 		$req = $bdd->prepare('SELECT * FROM VOLUME_MANGA WHERE ID_VOLUME="'.$id_volume.'"');
 		$req->execute();
-		$volumes = $req -> fetchAll();
+		$volume = $req -> fetch(PDO::FETCH_ASSOC);
 		return $volume;
 	}
 

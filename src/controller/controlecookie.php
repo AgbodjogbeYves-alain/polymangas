@@ -1,8 +1,8 @@
 <?php require("../bdd/config.php");?>
-<?php require('../model/info.php');?>
+<?php require("../model/info.php");?>
 <?php
 	if(isset($_COOKIE["user"])){
-		$droit=get_droit_user();
+		$droit = get_droit_user();
 		if($droit['ISADMIN']==1){
 			header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/acceuilabo.php');
 		}

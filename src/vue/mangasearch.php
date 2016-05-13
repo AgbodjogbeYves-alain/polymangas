@@ -27,7 +27,7 @@
               <li><a href="affichemangas.php">Mangas</a></li>
              <li><a href="gerefavoris.php">Favoris</a></li>
              <li><a href="monpanier.php">Commandes</a></li>
-              <li><a href="../controller/logout.php">Logout</a></li>
+              <li><a href="../controller/logout.php">Deconnexion</a></li>
           </ul>
 
           <!--Side nav-->

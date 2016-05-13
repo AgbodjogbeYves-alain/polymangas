@@ -23,4 +23,13 @@
 		$thismanga = $req -> fetch();
 		return $thismanga;
 	}
+
+	function get_this_manga_from_vol($idvolume){
+		global $bdd;
+		$req = $bdd->prepare('SELECT M.* FROM MANGA M,VOLUME_MANGA V WHERE M.ID_MANGA=V.ID_MANGA AND V.ID_VOLUME="'.$idvolume.'"');
+		$req->execute();
+		$thismanga = $req -> fetch();
+		return $thismanga;
+	}
+
 ?>

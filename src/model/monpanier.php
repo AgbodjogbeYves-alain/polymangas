@@ -19,6 +19,8 @@
 		global $bdd;
 		$req2 = $bdd->prepare('INSERT INTO COMMANDES(ID_VOLUME, PSEUDO,DATE_COM) VALUES(?,?,?)');
 		$req2->execute(array ($id_volume,$pseudo,$date));
+		$req3 = $bdd->prepare("call MJ_DISP(".$id_volume.")");
+		$req3 ->execute();
 		return 0;
 	}
 

@@ -85,7 +85,7 @@
 		            </button>
 		          </div>
 		         </form></p>
-		         <p><form method = "POST" class="col s9" action="../controller/volumes.php">
+		         <p><form method = "POST" class="col s9" action="../vue/volume_manga.php">
 		          <div>
 			        <div class="row">
 	          			<div class="input-field col s9">

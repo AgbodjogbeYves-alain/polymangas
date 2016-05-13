@@ -43,6 +43,7 @@
                             }
 
                         setcookie("user",$pseudo,time()+86400,"/");//dure 1 jour
+                        setcookie("droits",$droit['ISADMIN'],time()+86400,"/");
                     }
                     else{
                         header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/signin.php');

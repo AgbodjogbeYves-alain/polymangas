@@ -18,7 +18,7 @@
     </head>
 
     <body>
-    	<div class="navbar-wrapper">
+    	<div class="navbar-fixed">
     	<nav>
 	   	  <div class="nav-wrapper grey darken-2" id = "navbar">
 	   	  	<ul class="hide-on-med-and-down">
@@ -39,7 +39,7 @@
   		</div>
 	<!--Content-->
 	<h1>Bienvenue sur Polymangas</h1>
-    <h2>Site de mangas</h2>
+    <h2>Le site de vos mangas favoris</h2>
 	
 
 	<!--Import jQuery before materialize.js-->
