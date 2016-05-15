@@ -17,7 +17,7 @@
                 if($count[0] == 0)
                 { 
                     echo "Erreur pseudo. Veuillez vous réauthentifier ou vous inscrire";
-                    header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/signin.php');
+                    header('Location: https://polymangas-igmangas.rhcloud.com/src/vue/signin.php');
                     //Exception, erreur ou ce que tu désires
                 }
                 else { //Login existant
@@ -35,18 +35,29 @@
                         
                         if ($droit['ISADMIN'] == 1){
                             echo "c'est un abonne";
-                            header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/acceuilabo.php');
+                            header('Location: https://polymangas-igmangas.rhcloud.com/src/vue/acceuilabo.php');
                         }
                         else{
                              echo "c'est un admin";
-                             header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/acceuiladmin.php');
+                             header('Location: https://polymangas-igmangas.rhcloud.com/src/vue/acceuiladmin.php');
                             }
-
+                        $string="ce projet est une aubaine";
+                        $token=sha1($pseudo);
+                        $today = date("m.d.y"); 
+                        $token.=sha1($today);
+                        $token.=sha1($_POST['token0']);
+                        $token.=sha1($string);
+                        $tok=sha1($token);
+                        $hpseudo=sha1($pseudo);
                         setcookie("user",$pseudo,time()+86400,"/");//dure 1 jour
-                        setcookie("droits",$droit['ISADMIN'],time()+86400,"/");
+                        setcookie("auth",$droit['ISADMIN'],time()+86400,"/",$secure=false,$httponly=true);
+                        setcookie("token",$tok,time()+86400,"/",$secure=false,$httponly=true);
+                        setcookie("str",$string,time()+86400,"/",$secure=false,$httponly=true);
+                        setcookie("tokenuser",$hpseudo,time()+86400,"/",$secure=false,$httponly=true);
+
                     }
                     else{
-                        header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/signin.php');
+                        header('Location: https://polymangas-igmangas.rhcloud.com/src/vue/signin.php');
                     }
                 }
            }

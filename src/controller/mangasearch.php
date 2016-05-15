@@ -22,13 +22,13 @@
 			}
 			if($present==1){
 				print (
-					'<div class="panel panel-default grey lighten-2" id="divmangas1">
-			        <div class="panel-heading"><p> TITRE : '.$titre.'</p></div>
+					'<div class="panel panel-default blue-grey lighten-2" id="divmangas1">
+			        <div class="panel-heading"><p class="z-depth-3"> TITRE : '.$titre.'</p></div>
 			        <div class="panel-body">
-			        <p> EDITEUR : '.$editeur.'</p>
-			        <p> DESSINATEUR : '.$dessinateur.'</p>
-			        <p> SYNOPSIS : '.$description.'</p>
-			        <p><form method = "POST" class="col s9" action="../controller/deletefavoris.php"> 
+			        <p class="z-depth-3"> EDITEUR : '.$editeur.'</p>
+			        <p class="z-depth-3"> DESSINATEUR : '.$dessinateur.'</p>
+			        <p class="z-depth-3"> SYNOPSIS : '.$description.'</p>
+			        <p class="z-depth-3"><form method = "POST" class="col s9" action="../controller/deletefavoris.php"> 
 				        <div>
 					        <div class="row">
 			          			<div class="input-field col s9">
@@ -37,14 +37,11 @@
 			            		</div>
 			          		</div>
 			          		<div>
-				            	<button>
-				             		<a class="waves-effect waves-light btn" type="submit" name="action">
-				             		<i class="material-icons right">done</i>Retirer des favoris</a>
-				            	</button>
-				            </div>
+			            <input id="search-btn" type="submit" value="Supprimer cet utilisateur" />
+			          </div>
 		          		</div>
 			         </form></p>
-			         <p><form method = "POST" class="col s9" action="../vue/volume_manga.php">
+			         <p class="z-depth-3"><form method = "POST" class="col s9" action="../vue/volume_manga.php">
 				         <div>
 					        <div class="row">
 			          			<div class="input-field col s9">
@@ -53,10 +50,7 @@
 			          		</div>
 		          		</div>
 			          <div>
-			            <button> 
-			              <a class="waves-effect waves-light btn" type="submit" name="action">
-			              <i class="material-icons right">done</i>Verifier les tomes disponibles</a>
-			            </button>
+			            <input id="search-btn" type="submit" value="Supprimer cet utilisateur" />
 			          </div>
 			         </form></p>
 			        </div>
@@ -64,13 +58,13 @@
 			}
 			else{
 				print (
-				'<div class="panel panel-default grey lighten-2" id="divmangas1" >
-		        <div class="panel-heading"><p> TITRE : '.$titre.'</p></div>
+				'<div class="panel panel-default blue-grey lighten-2" id="divmangas1" >
+		        <div class="panel-heading"><p class="z-depth-3"> TITRE : '.$titre.'</p></div>
 		        <div class="panel-body">
-		        <p> EDITEUR : '.$editeur.'</p>
-		        <p> DESSINATEUR : '.$dessinateur.'</p>
-		        <p> SYNOPSIS : '.$description.'</p>
-		        <p><form method = "POST" class="col s9" action="../controller/ajouterfavoris.php"> 
+		        <p class="z-depth-3"> EDITEUR : '.$editeur.'</p>
+		        <p class="z-depth-3"> DESSINATEUR : '.$dessinateur.'</p>
+		        <p class="z-depth-3"> SYNOPSIS : '.$description.'</p>
+		        <p class="z-depth-3"><form method = "POST" class="col s9" action="../controller/ajouterfavoris.php"> 
 			        <div>
 			        <div class="row">
 	          			<div class="input-field col s9">
@@ -79,14 +73,11 @@
 	            		</div>
 	          		</div>
 		        	<div>
-		            <button>
-		             <a class="waves-effect waves-light btn" type="submit" name="action">
-		             <i class="material-icons right">done</i>Ajouter aux favoris</a>
-		            </button>
-		          </div>
+			            <input id="search-btn" type="submit" value="Ajouter a mes favoris" />
+			        </div>
 		          </div>
 		         </form></p>
-		         <p><form method = "POST" class="col s9" action="../vue/volume_manga.php">
+		         <p class="z-depth-3"><form method = "POST" class="col s9" action="../vue/volume_manga.php">
 		         <div>
 				        <div class="row">
 		          			<div class="input-field col s9">
@@ -95,10 +86,8 @@
 		          		</div>
 		          </div>
 		          <div>
-		            <button> 
-		              <a class="waves-effect waves-light btn" type="submit" name="action">
-		              <i class="material-icons right">done</i>Verifier les tomes disponibles</a>
-		            </button>
+			            <input id="search-btn" type="submit" value="Voir tomes disponibles" />
+			       </div>
 		          </div>
 		         </form></p>
 		        </div>
@@ -110,10 +99,7 @@
 
 	elseif(!isset($_COOKIE['user'])) 
 	{
-		header("Location: http://polymangas-igmangas.rhcloud.com/src/vue/signin.php");
+		header("Location: https://polymangas-igmangas.rhcloud.com/src/vue/signin.php");
 	}
-	//$titre1 = $_POST['searchmanga'];
-	//$mangas = get_these_mangas($titre1);
-	//echo $titre1;
-	//print_r($mangas);
+	
 ?>

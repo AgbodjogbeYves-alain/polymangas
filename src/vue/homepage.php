@@ -1,4 +1,7 @@
-<?php include("../controller/controlecookie.php");?>
+
+<?php 
+  include("../controller/controlecookie.php");
+  ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,7 +9,7 @@
     	<!-- Favicon -->
     	<link rel="icon" type="image/jpg" href="../image/mangalogo.jpg"/>
     	<!--Import Google Icon Font-->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
      	<!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
         <!--Let browser know website is optimized for mobile-->
@@ -18,7 +21,7 @@
     </head>
 
     <body>
-    	<div class="navbar-fixed">
+    	<div class="navbar-fixed blue darken-4" >
     	<nav>
 	   	  <div class="nav-wrapper grey darken-2" id = "navbar">
 	   	  	<ul class="hide-on-med-and-down">

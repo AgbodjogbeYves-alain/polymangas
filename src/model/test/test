@@ -1,0 +1,22 @@
+function create_manga($titre,$editeur,$dessinateur,$resume,$urlimage){
+		global $bdd;
+		$req = $bdd->prepare('INSERT INTO MANGA(TITRE_MANGA,EDITEUR,DESSINATEUR,DESCRIPTION,IMAGE) VALUES(?,?,?,?,?)');
+		$req->execute(array ($titre,$editeur,$dessinateur,$resume,$urlimage));
+		return 0;
+	}
+
+	function delete_manga($titre){
+		global $bdd;
+		$req2 = $bdd->prepare('DELETE FROM MANGA WHERE TITRE_MANGA="'.$titre.'"');
+		$req2->execute();
+		return 0;
+	}
+
+	function delete_manga2($idmanga){
+		global $bdd;
+		$req2 = $bdd->prepare('DELETE FROM MANGA WHERE ID_MANGA="'.$idmanga.'"');
+		$req2->execute();
+		return 0;
+	}
+
+ALTER TABLE COMMANDES ADD CONSTRAINT fk_pseudo FOREIGN KEY ( PSEUDO ) REFERENCES USERS( PSEUDO ) ON DELETE CASCADE

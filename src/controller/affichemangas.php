@@ -4,10 +4,19 @@
 
 <?php
 	
-	if (isset($_COOKIE['user'])){
+	
+	if (isset($_COOKIE['user']) AND isset($_COOKIE['auth'])){
 		$mangas = get_all_mangas();
 		$pseudo=$_COOKIE['user'];
 		$favoris= get_users_fav($pseudo);
+		if($_COOKIE['auth']==0){
+			print('<div class="recherche_p">
+				        <form action="ajoutmanga.php" id="searchthis" method="POST">
+				        <input id="search-btn" type="submit" value="Ajouter mangas" />
+			        	</form>
+			      	</div>');
+
+		}
 		foreach ($mangas as $manga) {
 			$description = utf8_encode($manga['DESCRIPTION']);
 			$titre = utf8_encode($manga['TITRE_MANGA']);
@@ -19,15 +28,16 @@
 					$present=1;
 				}
 			}
+		if($_COOKIE['auth']==1){
 			if($present==1){
 				print (
-					'<div class="panel panel-default grey lighten-2" id="divmangas1" >
-			        <div class="panel-heading"><p> TITRE : '.$titre.'</p></div>
+					'<div class="panel panel-default blue-grey lighten-2" id="divmangas1" >
+			        <div class="panel-heading" ><p class="z-depth-3"> TITRE : '.$titre.'</p></div>
 			        <div class="panel-body">
-			        <p> EDITEUR : '.$editeur.'</p>
-			        <p> DESSINATEUR : '.$dessinateur.'</p>
-			        <p> SYNOPSIS : '.$description.'</p>
-			        <p><form method = "POST" class="col s9" action="../controller/deletefavoris.php"> 
+			        <p class="z-depth-3"> EDITEUR : '.$editeur.'</p>
+			        <p class="z-depth-3"> DESSINATEUR : '.$dessinateur.'</p>
+			        <p class="z-depth-3"> SYNOPSIS : '.$description.'</p>
+			        <p class="z-depth-3"><form method = "POST" class="col s9" action="../controller/deletefavoris.php"> 
 				        <div>
 				        <div class="row">
 		          			<div class="input-field col s9">
@@ -36,40 +46,35 @@
 		            		</div>
 		          		</div>
 		          		<div>
-			            	<button>
-			             		<a class="waves-effect waves-light btn" type="submit" name="action">
-			             		<i class="material-icons right">cloud</i>Retirer des favoris</a>
-			            	</button>
+			            	<input id="search-btn" type="submit" value="Retirer des favoris" />
 			            </div>
 		          		</div>
 			         </form></p>
-			         <p><form method = "POST" class="col s9" action="../vue/volume_manga.php">
+			         <p class="z-depth-3"><form method = "POST" class="col s9" action="../vue/volume_manga.php">
 			          <div>
 				        <div class="row">
 		          			<div class="input-field col s9">
-		              			<input id="idmanga" type="HIDDEN" name="idmanga1" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
+		              			<input id="idaffichemanga1" type="HIDDEN" name="idmanga1" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
 		            		</div>
 		          		</div>
 	          		</div>
 			          <div>
-			            <button> 
-			              <a class="waves-effect waves-light btn" type="submit" name="action">
-			              <i class="material-icons right">cloud</i>Verifier les tomes disponibles</a>
-			            </button>
+			            <input id="search-btn" type="submit" value="Voir les tomes disponibles" />
 			          </div>
 			         </form></p>
 			        </div>
 			        </div>');
 			}
+
 			else{
 				print (
-				'<div class="panel panel-default grey lighten-2" id="divmangas1" >
-		        <div class="panel-heading"><p> TITRE : '.$titre.'</p></div>
+				'<div class="panel panel-default blue-grey lighten-2" id="divmangas1" >
+		        <div class="panel-heading"><p class="z-depth-3"> TITRE : '.$titre.'</p></div>
 		        <div class="panel-body">
-		        <p> EDITEUR : '.$editeur.'</p>
-		        <p> DESSINATEUR : '.$dessinateur.'</p>
-		        <p> SYNOPSIS : '.$description.'</p>
-		        <p><form method = "POST" class="col s9" action="../controller/ajouterfavoris.php"> 
+		        <p class="z-depth-3"> EDITEUR : '.$editeur.'</p>
+		        <p class="z-depth-3"> DESSINATEUR : '.$dessinateur.'</p>
+		        <p class="z-depth-3"> SYNOPSIS : '.$description.'</p>
+		        <p class="z-depth-3"><form method = "POST" class="col s9" action="../controller/ajouterfavoris.php"> 
 			        <div>
 			        <div class="row">
 	          			<div class="input-field col s9">
@@ -79,36 +84,159 @@
 	          		</div>
 	          		</div>
 		        	<div>
-		            <button>
-		             <a class="waves-effect waves-light btn" type="submit" name="action">
-		             <i class="material-icons right">done</i>Ajouter aux favoris</a>
-		            </button>
-		          </div>
-		         </form></p>
-		         <p><form method = "POST" class="col s9" action="../vue/volume_manga.php">
-		          <div>
-			        <div class="row">
-	          			<div class="input-field col s9">
-	              			<input id="idmanga" type="HIDDEN" name="idmanga1" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
+		            	<input id="search-btn" type="submit" value="Ajouter aux favoris" />
+		         	 </div>
+		         	</form></p>
+		         	<p class="z-depth-3"><form method = "POST" class="col s9" action="../vue/volume_manga.php">
+		          	<div>
+			        	<div class="row">
+	          				<div class="input-field col s9">
+	              				<input id="idaffichemanga1" type="HIDDEN" name="idmanga1" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
 	            		</div>
 	          		</div>
 	          		</div>
 		          <div>
-		            <button> 
-		              <a class="waves-effect waves-light btn" type="submit" name="action">
-		              <i class="material-icons right">done</i>Verifier les tomes disponibles</a>
-		            </button>
+		            <input id="search-btn" type="submit" value="Voir les tomes disponibles" />
 		          </div>
 		         </form></p>
+		        </div>
+		        </div>');
+			}
+		}
+		else{//si admin
+			if($present==1){
+				print (
+					'
+					<div class="panel panel-default blue-grey lighten-2" id="divmangas1" >
+			        <div class="panel-heading"><p class="z-depth-3"> TITRE : '.$titre.'</p></div>
+			        <div class="panel-body">
+			        <p class="z-depth-3"> EDITEUR : '.$editeur.'</p>
+			        <p class="z-depth-3"> DESSINATEUR : '.$dessinateur.'</p>
+			        <p class="z-depth-3"> SYNOPSIS : '.$description.'</p>
+			        <p class="z-depth-3"><form method = "POST" class="col s9" action="../controller/deletefavoris.php"> 
+				        <div>
+				        <div class="row">
+		          			<div class="input-field col s9">
+		              			<input id="idmanga" type="number" name="idmanga" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
+		              			<label class="active" for="ID">ID</label>
+		            		</div>
+		          		</div>
+		          		<div>
+			            	<input id="search-btn" type="submit" value="Retirer des favoris" />
+			            </div>
+		          		</div>
+			         </form></p>
+			         <p class="z-depth-3"><form method = "POST" class="col s9" action="../vue/volume_manga.php">
+			          <div>
+				        <div class="row">
+		          			<div class="input-field col s9">
+		              			<input id="idaffichemanga1" type="HIDDEN" name="idmanga1" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
+		            		</div>
+		          		</div>
+	          		</div>
+			          <div>
+			            <input id="search-btn" type="submit" value="Voir les tomes disponible" />
+			          </div>
+
+			         </form></p>
+			         <p class="z-depth-3"><form method = "POST" class="col s9" action="../controller/modifinfosmanga.php"> 
+				        <div>
+				        <div class="row">
+		          			<div class="input-field col s9">
+		              			<input id="idaffichemanga1" type="HIDDEN" name="idmanga" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
+		            		</div>
+		          		</div>
+		          		<div>
+			            	<input id="search-btn" type="submit" value="Modifier les informations de ce manga" />
+			            </div>
+		          		</div>
+		          		</form></p>
+		          		<p class="z-depth-3"><form method = "POST" class="col s9" action="../controller/supmanga.php"> 
+				        <div>
+				        <div class="row">
+		          			<div class="input-field col s9">
+		              			<input id="idaffichemanga1" type="HIDDEN" name="idmanga3" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
+		            		</div>
+		          		</div>
+		          		<div>
+			            	<input id="search-btn" type="submit" value="Supprimer ce manga" />
+			            </div>
+		          		</div>
+		          	</form></p>
+			        </div>
+			        </div>');
+			}
+
+			else{
+				print (
+
+				'
+				<div class="panel panel-default blue-grey lighten-2" id="divmangas1" >
+		        <div class="panel-heading"><p class="z-depth-3"> TITRE : '.$titre.'</p></div>
+		        <div class="panel-body">
+		        <p class="z-depth-3"> EDITEUR : '.$editeur.'</p>
+		        <p class="z-depth-3"> DESSINATEUR : '.$dessinateur.'</p>
+		        <p class="z-depth-3"> SYNOPSIS : '.$description.'</p>
+		        <p class="z-depth-3"><form method = "POST" class="col s9" action="../controller/ajouterfavoris.php"> 
+			        <div>
+			        <div class="row">
+	          			<div class="input-field col s9">
+	              			<input id="idmanga" type="number" name="idmanga" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
+	              			<label class="active" for="ID">ID</label>
+	            		</div>
+	          		</div>
+	          		</div>
+		        	<div>
+		            <input id="search-btn" type="submit" value="Ajouteraux favoris" />
+		          </div>
+		         </form></p>
+		         <p class="z-depth-3"><form method = "POST" class="col s9" action="../vue/volume_manga.php">
+		          <div>
+			        <div class="row">
+	          			<div class="input-field col s9">
+	              			<input id="idaffichemanga1" type="HIDDEN" name="idmanga1" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
+	            		</div>
+	          		</div>
+	          		</div>
+		          <div>
+		            <input id="search-btn" type="submit" value="Verifier les tomes disponibles" />
+		          </div>
+		         </form></p>
+		         <p class="z-depth-3"><form method = "POST" class="col s9" action="../controller/modifinfosmanga.php"> 
+				        <div>
+				        <div class="row">
+		          			<div class="input-field col s9">
+		              			<input id="idaffichemanga1" type="HIDDEN" name="idmanga" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
+		            		</div>
+		          		</div>
+		          		<div>
+			            	<input id="search-btn" type="submit" value="Modifier les informations de ce manga" />
+			            </div>
+		          		</div>
+		          	</form></p>
+		          <p class="z-depth-3"><form method = "POST" class="col s9" action="../controller/supmanga.php"> 
+				        <div>
+				        <div class="row">
+		          			<div class="input-field col s9">
+		              			<input id="idaffichemanga1" type="HIDDEN" name="idmanga3" value="'.$manga['ID_MANGA'].'" readonly="readonly"/>
+		            		</div>
+		          		</div>
+		          		<div>
+			            	<input id="search-btn" type="submit" value="Supprimer ce manga" />
+			            </div>
+		          		</div>
+		          	</form></p>
 		        </div>
 		        </div>');
 			}
 			# code...
 		}
 	}
+}
 
-	elseif(!isset($_COOKIE['user'])) 
+
+	else 
 	{
-		header("Location: http://polymangas-igmangas.rhcloud.com/src/vue/signin.php");
+		header("Location: https://polymangas-igmangas.rhcloud.com/src/vue/signin.php");
 	}
 ?>

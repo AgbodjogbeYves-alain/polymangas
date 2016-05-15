@@ -1,7 +1,4 @@
-
 <!DOCTYPE html>
-
-
 <html>
     <head>
    		<title>Polymangas</title>
@@ -18,8 +15,19 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     </head>
 <body>
-<?php include("../controller/navbar.php");?>
-<!--Content-->
-<?php include("../controller/info.php"); ?>
+      <?php include("../controller/navbar.php");?>
+      <!--content-->
+      <div class="recherche_p">
+        <form action="mangasearch.php" id="searchthis" method="POST">
+        <input id="search" name="searchmanga" type="text" placeholder="Rechercher" />
+        <input id="search-btn" type="submit" value="Rechercher" />
+        </form>
+      </div>
+      <div class="recherche_p">
+                <form action="signupadmin.php" id="searchthis" method="POST">
+                <input id="search-btn" type="submit" value="Ajouter admin" />
+                </form>
+      </div>
+       <?php include("../controller/afficheusers.php"); ?>
     </body>
 </html>

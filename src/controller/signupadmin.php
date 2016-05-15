@@ -13,16 +13,16 @@
 			$pays =htmlentities($_POST['pays'],ENT_QUOTES);
 			$email =htmlentities($_POST['email'],ENT_QUOTES);
 			$datenaiss =htmlentities($_POST['datenaiss'],ENT_QUOTES);
-			$result = create_abo($pseudo,$nom,$prenom,$password,$email,$numrue,$libellerue ,$ville,$pays,$datenaiss);
+			$result = create_admin($pseudo,$nom,$prenom,$password,$email,$numrue,$libellerue ,$ville,$pays,$datenaiss);
 			if ($result==0){
-				header('Location: https://polymangas-igmangas.rhcloud.com/src/vue/signin.php');
+				header('Location: https://polymangas-igmangas.rhcloud.com/src/vue/afficheusers.php');
 			}
 			else{
-				header('Location: https://polymangas-igmangas.rhcloud.com/src/vue/signup.php');
+				header('Location: https://polymangas-igmangas.rhcloud.com/src/vue/signupadmin.php');
 			}
 		}
 		else
 		{
-			header('Location: https://polymangas-igmangas.rhcloud.com/src/vue/signup.php');
+			header('Location: https://polymangas-igmangas.rhcloud.com/src/vue/signupadmin.php');
 		}
 ?>

@@ -5,7 +5,7 @@
     	<!-- Favicon -->
     	<link rel="icon" type="image/jpg" href="../image/mangalogo.jpg"/>
     	<!--Import Google Icon Font-->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
      	<!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
         <!--Let browser know website is optimized for mobile-->
@@ -17,7 +17,7 @@
 <body>
       <div class="navbar-wrapper">
       <nav>
-          <div class="nav-wrapper grey darken-2">
+          <div class="nav-wrapper blue darken-4">
           <ul class="hide-on-med-and-down">
             <a href="homepage.php" class="brand-logo" id = "icone">PolyMangas</a>
           </ul>
@@ -99,10 +99,9 @@
           </div>
         <div class="row">
           <div>
-            <button>
-              <a class="waves-effect waves-light btn" type="submit" name="action">Validate</a>
-              <i class="material-icons right">done</i>
-            </button>
+            <div>
+                  <input id="search-btn" type="submit" value="Enregistre moi!!" />
+              </div>
           </div>
         </div>
         </form>

@@ -5,7 +5,7 @@
     	<!-- Favicon -->
     	<link rel="icon" type="image/jpg" href="../image/mangalogo.jpg"/>
     	<!--Import Google Icon Font-->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
      	<!--Import materialize.css-->
         <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
         <!--Let browser know website is optimized for mobile-->

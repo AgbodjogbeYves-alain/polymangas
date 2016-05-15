@@ -15,14 +15,14 @@
       $email = htmlentities($_POST['email1'],ENT_QUOTES);
       $result = update_info_user_admin($pseudo,$nom,$prenom,$password,$email,$numrue,$libellerue ,$ville,$pays);
       if ($result==0){
-        header('Location: http://polymangas-igmangas.rhcloud.com/src/controller/logout.php');
+        header('Location: https://polymangas-igmangas.rhcloud.com/src/controller/logout.php');
       }
       else{
-        header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/infoadmin.php');
+        header('Location: https://polymangas-igmangas.rhcloud.com/src/vue/infoadmin.php');
       }
 
     }
     else{
-      header('Location: http://polymangas-igmangas.rhcloud.com/src/vue/infoadmin.php');
+      header('Location: https://polymangas-igmangas.rhcloud.com/src/vue/infoadmin.php');
     }
 ?>
