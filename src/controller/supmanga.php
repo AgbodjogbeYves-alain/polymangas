@@ -1,5 +1,5 @@
 <?php
-	require("../bdd/config.php");
+	require("../bd/config.php");
   	require("../model/affichemangas.php");
   	$idmanga = $_POST['idmanga3'];
   	$result=delete_manga($idmanga);

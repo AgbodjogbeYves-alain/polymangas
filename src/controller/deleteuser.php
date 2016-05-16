@@ -1,5 +1,5 @@
 <?php
-	include("../bdd/config.php");
+	include("../bd/config.php");
 	include("../model/afficheusers.php");
 
 	$pseudo=$_POST['pseudo'];

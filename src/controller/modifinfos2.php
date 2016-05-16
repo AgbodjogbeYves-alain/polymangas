@@ -1,6 +1,6 @@
 
 <?php
-  require("../bdd/config.php");
+  require("../bd/config.php");
   require("../model/info.php");
 
   if(isset($_POST['nom1']) AND isset($_POST['prenom1']) AND isset($_POST['pseudo1']) AND isset($_POST['password1']) AND isset($_POST['ville1']) AND isset($_POST['numrue1']) AND isset($_POST['libellerue1']) AND isset($_POST['pays1']) AND isset($_POST['email1'])){ 

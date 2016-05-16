@@ -1,5 +1,5 @@
 <?php
-	    require('../bdd/config.php');
+	    require('../bd/config.php');
 		include_once('../model/signup.php');
 
 		if(isset($_POST['last_name']) AND isset($_POST['first_name']) AND isset($_POST['pseudo']) AND isset($_POST['password']) AND isset($_POST['ville']) AND isset($_POST['ville']) AND isset($_POST['numrue']) AND isset($_POST['libellerue']) AND isset($_POST['pays']) AND isset($_POST['email']) AND isset($_POST['datenaiss'])){ 

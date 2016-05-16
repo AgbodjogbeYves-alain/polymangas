@@ -1,5 +1,5 @@
 <?php
-	include("../bdd/config.php");
+	include("../bd/config.php");
 	include("../model/gerefavoris.php");
 
 	$id_manga=$_POST['idmanga'];

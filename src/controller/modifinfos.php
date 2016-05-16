@@ -1,5 +1,5 @@
 <?php
-  require("../bdd/config.php");
+  require("../bd/config.php");
   require("../model/info.php");
 
   if(!isset($_COOKIE['user']) OR !isset($_COOKIE['token'])){

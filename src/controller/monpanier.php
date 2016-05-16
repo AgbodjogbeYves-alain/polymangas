@@ -1,4 +1,4 @@
-<?php require("../bdd/config.php");?>
+<?php require("../bd/config.php");?>
 <?php require("../model/affichemangas.php");?>
 <?php require("../model/monpanier.php");?>
 <?php require("../model/volumes.php");?>

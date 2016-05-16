@@ -21,9 +21,9 @@
     </head>
 
     <body>
-    	<div class="navbar-fixed blue darken-4" >
+    	<div class="navbar-fixed" >
     	<nav>
-	   	  <div class="nav-wrapper grey darken-2" id = "navbar">
+	   	  <div class="nav-wrapper blue darken-4" id = "navbar">
 	   	  	<ul class="hide-on-med-and-down">
 	      		 <a href="homepage.php" class="brand-logo" id = "icone">PolyMangas</a>
 	      	</ul>

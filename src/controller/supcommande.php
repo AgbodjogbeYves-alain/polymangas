@@ -1,5 +1,5 @@
 <?php
-	include("../bdd/config.php");
+	include("../bd/config.php");
 	include("../model/monpanier.php");
 
 	$id_com=$_POST['idcommande'];

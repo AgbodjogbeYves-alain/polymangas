@@ -1,4 +1,4 @@
-<?php require("../bdd/config.php");?>
+<?php require("../bd/config.php");?>
 <?php require("../model/info.php");?>
 <?php
 
